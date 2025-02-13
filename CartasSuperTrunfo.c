@@ -16,6 +16,9 @@ int main() {
     float area;
     float pib;
     int pontosTuristicos;
+    float densidadePopulacional; 
+    float pibPerCapta ;
+ 
 
     printf("Digite o código da cidade \n");
     scanf("%s", &codigo);
@@ -35,12 +38,17 @@ int main() {
     printf("Digite o número de pontos turisticos da cidade \n");
     scanf("%d", &pontosTuristicos);
 
+    densidadePopulacional = (float) populacao / area;
+    pibPerCapta  =(float) pib / populacao;
+
     printf("Codigo da cidade: %s \n", codigo);
     printf("Nome da cidade: %s \n", nome);
     printf("População da cidade: %d \n", populacao);
     printf("Área da cidade: %f \n", area);
     printf("PIB da cidade: %f \n", pib);
     printf("Quantidade de pontos turísticos: %d \n", pontosTuristicos);
+    printf("Densidade Populacional: %f \n", densidadePopulacional);
+    printf("PIB per Capta: %f \n", pibPerCapta);
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
