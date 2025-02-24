@@ -96,8 +96,21 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
-    printf("Se o retorno for 0 significa que o poder da carta 1 é maior que o poder da carta 2 \n");
-    printf("%d\n",superPoderCarta1>superPoderCarta2);
+    printf("\n\nComparação de cartas usando o atributo 'Área'");
+    printf("\nArea da cidade %s", nomeCidade1);
+    printf(" %d", areaCidade1);
+    printf("\nArea da cidade %s", nomeCidade2),
+    printf(" %d", areaCidade2);
+
+    if(areaCidade1 > areaCidade2){
+        printf("\nA cidade %s é maior", nomeCidade1);
+    }else{
+        if(areaCidade2 > areaCidade1){
+            printf("\nA cidade %s é maior", nomeCidade2);
+        }else{
+            printf("\nAs cidades tem a mesma área");
+        }
+    }
     //Abaixo vou inserir a mesma coisa para carta 2
 
     return 0;
