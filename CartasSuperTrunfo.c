@@ -17,13 +17,14 @@ int main() {
     float densidadePopulacionalCidade1;
     float pibPerCaptaCidade1;
     float superPoderCarta1;
+    int opcao;
 
     printf("Olá! Primeiro vamos definir o código da cidade! \n");
     printf("Escolha de A a H para o código do estado e de 01 a 04 para o código da cidade.\n");
     printf("Exemplo: C01\n");
-    scanf("%3s", &codigoCidade1);
+    scanf("%3s", codigoCidade1);
     printf("Digite agora o nome da cidade: \n");
-    scanf(" %20s", &nomeCidade1);
+    scanf(" %20s", nomeCidade1);
     printf("Digite o tamanho da população dessa cidade: \n");
     scanf("%d", &populacaoCidade1);
     printf("Digite a área da cidade: \n");
@@ -96,22 +97,66 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
-    printf("\n\nComparação de cartas usando o atributo 'Área'");
-    printf("\nArea da cidade %s", nomeCidade1);
-    printf(" %d", areaCidade1);
-    printf("\nArea da cidade %s", nomeCidade2),
-    printf(" %d", areaCidade2);
+    printf("\nCartas cadastradas agora vamos comparar! \n");
+    printf("Escolha um atributo para comparar: \n");
+    printf("1. População\n");
+    printf("2. Area da cidade\n");
+    printf("3. PIB da cidade\n");
+    printf("4. Quantidade de pontos Turísticos\n");
+    printf("5. Densidade populacional\n");
+    scanf("%d", &opcao);
 
-    if(areaCidade1 > areaCidade2){
-        printf("\nA cidade %s é maior", nomeCidade1);
-    }else{
-        if(areaCidade2 > areaCidade1){
-            printf("\nA cidade %s é maior", nomeCidade2);
+    switch (opcao)
+    {
+    case 1:
+        if(populacaoCidade1>populacaoCidade2){
+            printf("A cidade %s ganhou, por ter uma população maior", nomeCidade1);
+        }else if(populacaoCidade1 == populacaoCidade2){
+            printf("As duas cidades tem a mesma quantidade de habitantes");
         }else{
-            printf("\nAs cidades tem a mesma área");
+            printf("A cidade %s ganhou, por ter uma população maior", nomeCidade2);
         }
+        break;
+    case 2:
+        if(pibCidade1>pibCidade2){
+            printf("A cidade %s ganhou, por ter um PIB maior", nomeCidade1);
+        }else if(pibCidade1 == pibCidade2){
+            printf("As duas cidades tem o mesmo PIB");
+        }else{
+            printf("A cidade %s ganhou, por ter um PIB maior", nomeCidade2);
+        }
+        break;
+    case 3:
+        if(areaCidade1>areaCidade2){
+            printf("A cidade %s ganhou pois tem uma área maior", nomeCidade1);
+        }else if(areaCidade1 == areaCidade2){
+            printf("As duas cidades tem a mesma área");
+        }else{
+            printf("A cidade %s ganhou pois tem uma área maior", nomeCidade2);
+        }
+        break;
+    
+    case 4:
+        if(pontosTuristicosCidade1>pontosTuristicosCidade2){
+            printf("A cidade %s ganhou, pois tem mais pontos turísticos", nomeCidade1);
+        }else if(pontosTuristicosCidade1 == pontosTuristicosCidade2){
+            printf("As duas cidades tem a mesma quantidade de pontos turísticos");
+        }else{
+            printf("A cidade %s ganhou, pois tem mais pontos turísticos", nomeCidade2);
+        }
+        break;
+     case 5:
+        if(densidadePopulacionalCidade1>densidadePopulacionalCidade2){
+            printf("A %s ganhou pois tem uma densidade populacional menor", nomeCidade2);
+        }else if(densidadePopulacionalCidade1 == densidadePopulacionalCidade2){
+            printf("As duas cidades tem a mesma densidade populacional");
+        }else{
+            printf("A %s ganhou pois tem uma densidade populacional menor", nomeCidade1);
+        }
+        break;
+    default:
+        break;
     }
-    //Abaixo vou inserir a mesma coisa para carta 2
 
     return 0;
 }
